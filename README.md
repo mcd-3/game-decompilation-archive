@@ -2,6 +2,12 @@
 
 Docker image to set up a game decompilation project environment to build and develop various retro game decompilations.
 
+### What this is
+This is my personal tool used to archive fully completed N64 decompilation projects (and maybe Gamecube games in the future). It's a docker environment that contains custom scripts and all required dependencies needed to build the decomp projects.
+
+### What this is not
+This is not a tool to archive N64 PC ports or recompilation projects. This is also not a tool used for piracy (all game files must be provided legally, and we cannot distribute those).
+
 ## Set up
 Before setting up, make sure you have your legally obtained ROM files for each decompilation project (including all the versions you want to set up with). We cannot give you instructions on how to legally obtain ROM files, nor can we provide you with any.
 
@@ -10,6 +16,35 @@ Once you have all the files you need, do the following:
 2. Rename the rom to the version name + `.z64`
 3. Do steps 1 and 2 for every game and version you want to have within the archive
 - Ex: If you have the US version of a Super Mario 64 ROM, copy it to `roms/sm64/` as `us.z64`. It should look like `roms/sm64/us.z64`
+
+## How to use
+### Starting the Environment
+To start the environment, you will need to install docker. Once installed, you can use one of these commands to  build your container:
+```bash
+# Windows
+docker build -t gda . && winpty docker run -it gda bash
+
+# Mac / Linux
+docker build -t gda . && docker run -it gda bash
+```
+### Commands
+Inside the environment are a few commands to help with archiving:
+```bash
+## Note: each command supports the --help option
+
+# Pulls the latest changes from the decompilation projects
+#     --games: Specify which game projects to pull
+gda-pull --games=""
+
+# Lists the game projects supported and all its supported versions
+#     --games: Specify which games to check versions against
+gda-list --games=""
+
+# Sets up and builds a decompilation game
+#    --game   : Specify which game decompilation to set up and build
+#    --version: Specify which version to build
+gda-setup --game="" --version=""
+```
 
 ## Supported Projects
 ### Nintendo 64
