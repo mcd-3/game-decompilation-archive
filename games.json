@@ -1,0 +1,56 @@
+{
+    "banjo-kazooie": [
+        "us10",
+        "us11",
+        "pal",
+        "jp"
+    ],
+    "DOOM64-RE": [],
+    "DukeNukemZeroHour": [
+        "us"
+    ],
+    "hm64-decomp": [
+        "us"
+    ],
+    "mk64": [],
+    "mm": [
+        "us"
+    ],
+    "oot": [
+        "ntsc-1.0",
+        "ntsc-1.1",
+        "pal-1.0",
+        "ntsc-1.2",
+        "pal-1.1 ",
+        "gc-jp",
+        "gc-jp-mq",
+        "gc-us",
+        "gc-us-mq",
+        "gc-eu-mq-dbg",
+        "gc-eu ",
+        "gc-eu-mq",
+        "gc-jp-ce",
+        "ique-cn"
+    ],
+    "papermario": [
+        "us",
+        "jp",
+        "pal",
+        "ique"
+    ],
+    "perfect_dark": [
+        "ntsc-beta",
+        "ntsc-1.0",
+        "ntsc-final",
+        "pal-beta",
+        "pal-final",
+        "jpn-final"
+    ],
+    "sm64": [
+        "jp",
+        "us",
+        "eu",
+        "sh",
+        "cn"
+    ]
+}
