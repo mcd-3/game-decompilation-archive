@@ -74,3 +74,12 @@ def duke_nukem(version):
     print_header("Duke Nukem Zero Hour")
     os.system(f"cp /roms/DukeNukemZeroHour/{version}.z64 /projects/n64/DukeNukemZeroHour/baserom.{version}.z64")
     os.system(f"cd /projects/n64/DukeNukemZeroHour && make setup && make --jobs")
+
+def snowboardkids2():
+    cddir = "cd /projects/n64/snowboardkids2-decomp/"
+    print_header("Snowboard Kids 2")
+    os.system(f"cp /roms/snowboardkids2-decomp/snowboardkids2.z64 /projects/n64/snowboardkids2-decomp/snowboardkids2.z64")
+    os.system(f"{cddir} && python3 -m venv .venv")
+    os.system(f"{cddir} && source .venv/bin/activate")
+    os.system(f"{cddir} && python3 -m pip install -r requirements.txt")
+    os.system(f"{cddir} && make clean && make extract && make")

@@ -58,6 +58,7 @@ gda-setup --game="" --version=""
 |Perfect Dark         | https://github.com/n64decomp/perfect_dark        | `ntsc-final`, `ntsc-beta`, `ntsc-1.0`, `pal-beta`, `pal-final`, `jpn-final` |
 |Duke Nukem: Zero Hour| https://github.com/Gillou68310/DukeNukemZeroHour | `us`                          | 
 |Harvest Moon 64      | https://github.com/harvestwhisperer/hm64-decomp  | `us`, `jp`                    |
+|Snowboard Kids 2     | https://github.com/cdlewis/snowboardkids2-decomp | `us`                          |
 
 #### Building Issues (Unsupported)
 |Game          |Project URL                            |Versions              |

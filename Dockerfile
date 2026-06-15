@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bsdmainutils \
     build-essential \
     ca-certificates \
+    clang \
     cmake \
     cpp-mips-linux-gnu \
     curl \
@@ -28,8 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv \
     wget \
     xxd \
-    zlib1g-dev\
-    vim
+    zlib1g-dev
 
 # Install Rust and Pigment64 for Paper Mario Decompilation 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
@@ -59,6 +59,7 @@ RUN git clone https://gitlab.com/banjo.decomp/banjo-kazooie.git
 RUN git clone https://github.com/n64decomp/mk64.git --recurse-submodules
 RUN git clone https://github.com/Gillou68310/DukeNukemZeroHour.git --recursive
 RUN git clone --recursive https://github.com/harvestwhisperer/hm64-decomp.git
+RUN git clone --recurse-submodules -j8 https://github.com/cdlewis/snowboardkids2-decomp.git
 ## NOTE: This project requires the official N64 SDK and Windows XP. We can't build this in our image
 ##       Regardless, it's included for archival purposes
 RUN git clone https://github.com/Erick194/DOOM64-RE.git
@@ -93,6 +94,11 @@ RUN cd n64/DukeNukemZeroHour \
 RUN cd n64/hm64-decomp \
     && chmod +x tools/setup.sh \
     && tools/setup.sh
+
+## Snowboard Kids 2
+RUN cd n64/snowboardkids2-decomp \
+    && git submodule update --init --recursive \
+    && make setup
 
 COPY ./roms /roms
 COPY ./scripts /scripts
