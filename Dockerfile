@@ -60,6 +60,7 @@ RUN git clone https://github.com/n64decomp/mk64.git --recurse-submodules
 RUN git clone https://github.com/Gillou68310/DukeNukemZeroHour.git --recursive
 RUN git clone --recursive https://github.com/harvestwhisperer/hm64-decomp.git
 RUN git clone --recurse-submodules -j8 https://github.com/cdlewis/snowboardkids2-decomp.git
+RUN git clone https://github.com/AngheloAlf/drmario64.git
 ## NOTE: This project requires the official N64 SDK and Windows XP. We can't build this in our image
 ##       Regardless, it's included for archival purposes
 RUN git clone https://github.com/Erick194/DOOM64-RE.git
@@ -99,6 +100,10 @@ RUN cd n64/hm64-decomp \
 RUN cd n64/snowboardkids2-decomp \
     && git submodule update --init --recursive \
     && make setup
+
+## Doctor Mario 64
+RUN cd n64/drmario64 \
+    && curl -LsSf https://astral.sh/uv/install.sh | sh
 
 COPY ./roms /roms
 COPY ./scripts /scripts

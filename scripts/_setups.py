@@ -83,3 +83,9 @@ def snowboardkids2():
     os.system(f"{cddir} && source .venv/bin/activate")
     os.system(f"{cddir} && python3 -m pip install -r requirements.txt")
     os.system(f"{cddir} && make clean && make extract && make")
+
+def drmario64(version):
+    print_header("Doctor Mario 64")
+    os.system(f"cd /projects/n64/drmario64 && uv sync")
+    os.system(f"cp /roms/drmario64/{version}.z64 /projects/n64/drmario64/config/us/baserom.{version}.z64")
+    os.system(f"cd /projects/n64/drmario64 && make setup && make extract && make")
