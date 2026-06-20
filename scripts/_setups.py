@@ -89,3 +89,10 @@ def drmario64(version):
     os.system(f"cd /projects/n64/drmario64 && uv sync")
     os.system(f"cp /roms/drmario64/{version}.z64 /projects/n64/drmario64/config/us/baserom.{version}.z64")
     os.system(f"cd /projects/n64/drmario64 && make setup && make extract && make")
+
+def pilotwings64(version):
+    print_header("Pilotwings 64")
+    os.system(f"cp /roms/Pilotwings64Decomp/{version}.z64 /projects/n64/Pilotwings64Decomp/baserom.{version}.z64")
+    os.system(f"cd /projects/n64/Pilotwings64Decomp && uv venv && uv pip install -r requirements.txt")
+    os.system("cd /projects/n64/Pilotwings64Decomp && make dependencies && make init")
+    os.system("cd /projects/n64/Pilotwings64Decomp && make init")

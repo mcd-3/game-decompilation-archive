@@ -4,7 +4,7 @@
 ### Usage: python3 setup.py --game="" --version=""
 import argparse
 from _utils import is_valid_game_and_version
-from _setups import paper_mario, sm64, majoras_mask, banjo_kazooie, harvest_moon, perfect_dark, ocarina_of_time, duke_nukem, snowboardkids2, drmario64
+from _setups import paper_mario, sm64, majoras_mask, banjo_kazooie, harvest_moon, perfect_dark, ocarina_of_time, duke_nukem, snowboardkids2, drmario64, pilotwings64
 
 parser = argparse.ArgumentParser(
     description="Sets up a decompilation project"
@@ -52,6 +52,8 @@ if args.game and args.version:
             snowboardkids2()
         elif (args.game == "drmario64"):
             drmario64(args.version)
+        elif(args.game == "Pilotwings64Decomp"):
+            pilotwings64(args.version)
 
         print("Setup is complete. Please verify output for any errors.")
 else:
