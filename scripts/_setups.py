@@ -96,3 +96,11 @@ def pilotwings64(version):
     os.system(f"cd /projects/n64/Pilotwings64Decomp && uv venv && uv pip install -r requirements.txt")
     os.system("cd /projects/n64/Pilotwings64Decomp && make dependencies && make init")
     os.system("cd /projects/n64/Pilotwings64Decomp && make init")
+
+def goldeneye(version):
+    print_header("Goldeneye")
+    print("NOTE: Goldeneye REQUIRES you to extract the US ROM first!")
+    os.system(f"cp /roms/goldeneye_src/{version}.z64 /projects/n64/goldeneye_src/baserom.{version}.z64")
+    os.system(f"cd /projects/n64/goldeneye_src/ && ./scripts/extract_baserom.{version}.sh")
+    os.system(f"cd /projects/n64/goldeneye_src/ && make")
+

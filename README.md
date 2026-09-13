@@ -17,6 +17,9 @@ Once you have all the files you need, do the following:
 3. Do steps 1 and 2 for every game and version you want to have within the archive
 - Ex: If you have the US version of a Super Mario 64 ROM, copy it to `roms/sm64/` as `us.z64`. It should look like `roms/sm64/us.z64`
 
+### Note
+Some decompilations require additional dependencies that you'll need to manually download. Please see [dependencies/README.md](dependencies/README.md) for more information.
+
 ## How to use
 ### Starting the Environment
 To start the environment, you will need to install docker. Once installed, you can use one of these commands to  build your container:
@@ -60,6 +63,7 @@ gda-setup --game="" --version=""
 |Harvest Moon 64      | https://github.com/harvestwhisperer/hm64-decomp  | `us`, `jp`                    |
 |Snowboard Kids 2     | https://github.com/cdlewis/snowboardkids2-decomp | `us`                          |
 |Doctor Mario 64      | https://github.com/AngheloAlf/drmario64          | `us`                          |
+|Goldeneye            | https://gitlab.com/kholdfuzion/goldeneye_src     | `u`, `j`, `e`                 |
 
 #### Building Issues (Unsupported)
 |Game          |Project URL                            |Versions              |
