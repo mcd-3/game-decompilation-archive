@@ -64,6 +64,7 @@ gda-setup --game="" --version=""
 |Snowboard Kids 2     | https://github.com/cdlewis/snowboardkids2-decomp | `us`                          |
 |Doctor Mario 64      | https://github.com/AngheloAlf/drmario64          | `us`                          |
 |Goldeneye            | https://gitlab.com/kholdfuzion/goldeneye_src     | `u`, `j`, `e`                 |
+|Diddy Kong Racing    | https://github.com/davidsm64/diddy-kong-racing   | `us_1.0`                      |
 
 #### Building Issues (Unsupported)
 |Game          |Project URL                            |Versions              |
