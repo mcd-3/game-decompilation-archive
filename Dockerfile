@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libc6-dev-i386 \
     libcapstone-dev \
     libpng-dev \
+    libpcre2-8-0 \
+    libpcre2-dev \
     libxml2-dev \
     linux-headers-generic \
     linux-libc-dev \
@@ -67,6 +69,7 @@ RUN git clone --recurse-submodules -j8 https://github.com/cdlewis/snowboardkids2
 RUN git clone https://github.com/AngheloAlf/drmario64.git
 RUN git clone --recurse-submodules https://github.com/gcsmith/Pilotwings64Decomp.git
 RUN git clone https://gitlab.com/kholdfuzion/goldeneye_src.git
+RUN git clone https://github.com/DavidSM64/Diddy-Kong-Racing.git
 ## NOTE: This project requires the official N64 SDK and Windows XP. We can't build this in our image
 ##       Regardless, it's included for archival purposes
 RUN git clone https://github.com/Erick194/DOOM64-RE.git
@@ -111,6 +114,10 @@ RUN cd n64/snowboardkids2-decomp \
 COPY ./dependencies /dependencies
 RUN dpkg -i /dependencies/qemu-irix-2.11.0-2169-g32ab296eef_amd64.deb
 
+## Diddy Kong Racing
+RUN cd n64/Diddy-Kong-Racing \
+    && git submodule update --init --recursive \
+    && make setup
 
 COPY ./roms /roms
 COPY ./scripts /scripts

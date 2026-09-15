@@ -104,3 +104,9 @@ def goldeneye(version):
     os.system(f"cd /projects/n64/goldeneye_src/ && ./scripts/extract_baserom.{version}.sh")
     os.system(f"cd /projects/n64/goldeneye_src/ && make")
 
+def diddykongracing(version):
+    print_header("Diddy Kong Racing")
+    # TODO: Add support for other versions
+    os.system(f"cp /roms/Diddy-Kong-Racing/{version}.z64 /projects/n64/Diddy-Kong-Racing/baseroms/baserom.us.v77.z64")
+    os.system(f"cd /projects/n64/Diddy-Kong-Racing/ && make extract")
+    os.system(f"cd /projects/n64/Diddy-Kong-Racing/ && make REGION=us VERSION=v77")
